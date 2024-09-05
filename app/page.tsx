@@ -1,16 +1,22 @@
 "use client";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import CurrentWeather from "./components/CurrentWeather";
 
 export default function Home() {
+  const [weatherData, setWeatherData] = useState({ temp: 0, condition: "" });
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=43.7001&lon=-79.4163&units=metric&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`
         );
         console.log(response.data);
-        return response.data;
+        const data = response.data;
+        setWeatherData({
+          temp: data.main.temp,
+          condition: data.weather[0].description,
+        });
       } catch (error) {
         console.error(error);
       }
@@ -20,7 +26,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      Set Up
+      <CurrentWeather
+        temp={weatherData.temp}
+        condition={weatherData.condition}
+      />
     </div>
   );
 }
