@@ -7,13 +7,26 @@ type Props = {
 };
 
 export default function CurrentWeather({ temp, condition }: Props) {
+  const MotionBox = motion(Box);
+
   return (
-    <div>
-      <Text>Current Weather</Text>
+    <MotionBox
+      initial={{ x: -100 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 1 }}
+      className="rounded-lg shadow-lg p-6"
+    >
+      <Text fontSize="6xl" fontWeight="bold">
+        Current Weather
+      </Text>
       <Box>
-        <Text>Temp: {temp}</Text>
-        <Text>Condition: {condition}</Text>
+        <Text fontSize="6xl" fontWeight="bold">
+          Temp: {temp}
+        </Text>
+        <Text fontSize="2xl" fontStyle="italic">
+          Condition: {condition}
+        </Text>
       </Box>
-    </div>
+    </MotionBox>
   );
 }
