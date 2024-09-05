@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import CurrentWeather from "./components/CurrentWeather";
+import WeatherHistory from "./components/WeatherHistory";
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState({ temp: 0, condition: "" });
@@ -30,6 +31,7 @@ export default function Home() {
         temp={weatherData.temp}
         condition={weatherData.condition}
       />
+      <WeatherHistory />
     </div>
   );
 }
