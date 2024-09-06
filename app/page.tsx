@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherHistory from "./components/WeatherHistory";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState({ temp: 0, condition: "" });
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      {/* <Hero /> */}
       <CurrentWeather
         temp={weatherData.temp}
         condition={weatherData.condition}
