@@ -27,13 +27,32 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div>
       {/* <Hero /> */}
-      <CurrentWeather
-        temp={weatherData.temp}
-        condition={weatherData.condition}
-      />
-      <WeatherHistory />
+      <div
+        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-50 "
+        style={{
+          backgroundImage: `url('/lightbg.jpeg')`,
+        }}
+      >
+        <div className="flex flex-col items-center justify-center h-screen relative z-10 text-white">
+          <div className="text-center p-6 text-white">
+            <h1 className="text-5xl font-bold mb-4">Weather in Toronto</h1>
+            <p className="text-lg">Your daily Toronto weather insights.</p>
+          </div>
+
+          <div className="flex justify-center mt-8">
+            {" "}
+            <CurrentWeather
+              temp={weatherData.temp}
+              condition={weatherData.condition}
+            />
+          </div>
+          <div className="mt-16">
+            <WeatherHistory />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

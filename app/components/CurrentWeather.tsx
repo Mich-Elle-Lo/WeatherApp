@@ -1,32 +1,17 @@
-import { Box, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-
 type Props = {
   temp: number;
   condition: string;
 };
 
 export default function CurrentWeather({ temp, condition }: Props) {
-  const MotionBox = motion(Box);
-
   return (
-    <MotionBox
-      initial={{ x: -100 }}
-      animate={{ x: 0 }}
-      transition={{ duration: 1 }}
-      className="rounded-lg shadow-lg p-6"
-    >
-      <Text fontSize="6xl" fontWeight="bold">
-        Current Weather
-      </Text>
-      <Box>
-        <Text fontSize="6xl" fontWeight="bold">
-          Temp: {temp}
-        </Text>
-        <Text fontSize="2xl" fontStyle="italic">
-          Condition: {condition}
-        </Text>
-      </Box>
-    </MotionBox>
+    <div className="relative  shadow-lg p-8  text-white w-full h-[20rem]">
+      <div className="absolute top-4 right-4 text-5xl opacity-20">🌤</div>
+      <h1 className="text-4xl font-bold mb-4">Current Weather</h1>
+      <div className="flex justify-between items-center">
+        <p className="text-6xl font-semibold">Temp: {temp}</p>
+        <p className="text-lg font-light capitalize">Condition: {condition}</p>
+      </div>
+    </div>
   );
 }
