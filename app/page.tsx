@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import CurrentWeather from "./components/CurrentWeather";
 import WeatherHistory from "./components/WeatherHistory";
+import Snapshot from "./components/Snapshot";
 import Hero from "./components/Hero";
 
 export default function Home() {
@@ -27,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="h-screen">
       {/* <Hero /> */}
       <div
         className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-90 "
@@ -35,22 +36,27 @@ export default function Home() {
           backgroundImage: `url('/lightbg.jpeg')`,
         }}
       >
-        <div className="flex flex-col items-center justify-center h-screen relative z-10 text-white">
-          <div className="text-center p-6 text-white">
-            <h1 className="text-5xl font-bold mb-4">Weather in Toronto</h1>
-            <p className="text-lg">Your daily Toronto weather insights.</p>
-          </div>
+        {" "}
+      </div>
+      <div className="flex flex-col items-center justify-center h-screen relative text-white z-50">
+        <div className="text-center p-6 text-white">
+          <h1 className="text-5xl font-bold mb-4">Weather in Toronto</h1>
+          <p className="text-lg">Your daily Toronto weather insights.</p>
+        </div>
 
-          <div className="flex flex-col gap-3 justify-center mt-8">
-            <CurrentWeather
-              temp={weatherData.temp}
-              condition={weatherData.condition}
-            />
-          </div>
-          <div className="flex justify-center mt-8 w-[75vh]">
-            {" "}
-            <WeatherHistory />
-          </div>
+        <div className="flex flex-col gap-3 justify-center mt-8">
+          <CurrentWeather
+            temp={weatherData.temp}
+            condition={weatherData.condition}
+          />
+        </div>
+        <div className="flex justify-center mt-8 w-[75vh]">
+          {" "}
+          <WeatherHistory />
+        </div>
+        <div className="flex justify-center h-[15rem] mt-8 w-[75vh]  ">
+          {" "}
+          <Snapshot temp={weatherData.temp} condition={weatherData.condition} />
         </div>
       </div>
     </div>
