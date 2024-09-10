@@ -45,25 +45,25 @@ export default function Home() {
         </div>
         <div className="flex space-x-4 mt-8">
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
             onClick={() => setActiveTab("current")}
           >
             Current Weather
           </button>
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
             onClick={() => setActiveTab("history")}
           >
             Weather History
           </button>
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
             onClick={() => setActiveTab("snapshot")}
           >
             Weather Snapshot
           </button>
           <button
-            className="px-4 py-2 bg-blue-500 text-white rounded"
+            className="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
             onClick={() => setActiveTab("forecast")}
           >
             September Forecast

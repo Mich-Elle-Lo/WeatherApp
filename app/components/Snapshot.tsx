@@ -49,8 +49,7 @@ export default function Snapshot({ temp, condition }: Props) {
         </button>
       </div>
       <div>
-        <h3 className="text-lg font-bold">Saved Snapshots</h3>
-        <ul className="list-disc pl-8 flex">
+        <ul className=" pl-8 flex gap-4">
           {snapshotData.map((snapshot, index) => (
             <li key={index}>
               <p>
