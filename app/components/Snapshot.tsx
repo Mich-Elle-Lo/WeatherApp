@@ -12,6 +12,7 @@ export default function Snapshot({ temp, condition }: Props) {
 
   useEffect(() => {
     const savedSnapshots = localStorage.getItem("snapshots");
+
     if (savedSnapshots) {
       setSnapshotData(JSON.parse(savedSnapshots));
       console.log("snapshot", JSON.parse(savedSnapshots));
@@ -25,7 +26,7 @@ export default function Snapshot({ temp, condition }: Props) {
       timestamp: new Date().toLocaleString(),
     };
 
-    const newSnapshotData = [newSnapshot, ...snapshotData];
+    const newSnapshotData = [newSnapshot, ...snapshotData].slice(0, 5);
     setSnapshotData(newSnapshotData);
     localStorage.setItem("snapshots", JSON.stringify(newSnapshotData));
 
