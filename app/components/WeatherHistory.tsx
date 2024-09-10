@@ -11,9 +11,7 @@ import {
   CartesianGrid,
 } from "recharts";
 
-type Props = { date: string; maxTemp: number; minTemp: number; index: number };
-
-export default function WeatherHistory({}: Props) {
+export default function WeatherHistory() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -30,6 +28,7 @@ export default function WeatherHistory({}: Props) {
             minTemp: response.data.daily.temperature_2m_min[index],
           })
         );
+        console.log(formattedData);
         setData(formattedData);
       } catch (error) {
         console.error(error);
@@ -39,7 +38,7 @@ export default function WeatherHistory({}: Props) {
   }, []);
 
   return (
-    <ResponsiveContainer width="100%" height={250}>
+    <ResponsiveContainer width="100%" height={300}>
       <LineChart data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="date" />

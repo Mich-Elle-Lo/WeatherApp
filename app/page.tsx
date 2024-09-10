@@ -30,7 +30,7 @@ export default function Home() {
     <div>
       {/* <Hero /> */}
       <div
-        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-50 "
+        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-90 "
         style={{
           backgroundImage: `url('/lightbg.jpeg')`,
         }}
@@ -41,14 +41,14 @@ export default function Home() {
             <p className="text-lg">Your daily Toronto weather insights.</p>
           </div>
 
-          <div className="flex justify-center mt-8">
-            {" "}
+          <div className="flex flex-col gap-3 justify-center mt-8">
             <CurrentWeather
               temp={weatherData.temp}
               condition={weatherData.condition}
             />
           </div>
-          <div className="mt-16">
+          <div className="flex justify-center mt-8 w-[75vh]">
+            {" "}
             <WeatherHistory />
           </div>
         </div>
