@@ -33,12 +33,12 @@ export default function Home() {
     <div className="h-screen">
       {/* <Hero /> */}
       <div
-        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-90 "
+        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-60 "
         style={{
           backgroundImage: `url('/lightbg.jpeg')`,
         }}
       ></div>
-      <div className="flex flex-col items-center justify-center h-screen relative text-white ">
+      <div className="flex flex-col items-center justify-center h-screen relative text-white w-full ">
         <div className="text-center p-6 text-white">
           <h1 className="text-5xl font-bold mb-4">Weather in Toronto</h1>
           <p className="text-lg">Your daily Toronto weather insights.</p>
@@ -63,7 +63,7 @@ export default function Home() {
             Weather Snapshot
           </button>
         </div>
-        <div className="mt-8 w-full max-w-lg">
+        <div className="mt-8 px-5 sm:w-[80vh] md:w-[70vh] ">
           {activeTab === "current" && (
             <CurrentWeather
               temp={weatherData.temp}
