@@ -8,6 +8,8 @@ import Hero from "./components/Hero";
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState({ temp: 0, condition: "" });
+  const [activeTab, setActiveTab] = useState("current");
+
   useEffect(() => {
     const fetchWeather = async () => {
       try {
@@ -35,28 +37,46 @@ export default function Home() {
         style={{
           backgroundImage: `url('/lightbg.jpeg')`,
         }}
-      >
-        {" "}
-      </div>
-      <div className="flex flex-col items-center justify-center h-screen relative text-white z-50">
+      ></div>
+      <div className="flex flex-col items-center justify-center h-screen relative text-white ">
         <div className="text-center p-6 text-white">
           <h1 className="text-5xl font-bold mb-4">Weather in Toronto</h1>
           <p className="text-lg">Your daily Toronto weather insights.</p>
         </div>
-
-        <div className="flex flex-col gap-3 justify-center mt-8">
-          <CurrentWeather
-            temp={weatherData.temp}
-            condition={weatherData.condition}
-          />
+        <div className="flex space-x-4 mt-8">
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={() => setActiveTab("current")}
+          >
+            Current Weather
+          </button>
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={() => setActiveTab("history")}
+          >
+            Weather History
+          </button>
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={() => setActiveTab("snapshot")}
+          >
+            Weather Snapshot
+          </button>
         </div>
-        <div className="flex justify-center mt-8 w-[75vh]">
-          {" "}
-          <WeatherHistory />
-        </div>
-        <div className="flex justify-center h-[15rem] mt-8 w-[75vh]  ">
-          {" "}
-          <Snapshot temp={weatherData.temp} condition={weatherData.condition} />
+        <div className="mt-8 w-full max-w-lg">
+          {activeTab === "current" && (
+            <CurrentWeather
+              temp={weatherData.temp}
+              condition={weatherData.condition}
+            />
+          )}
+          {activeTab === "history" && <WeatherHistory />}
+          {activeTab === "snapshot" && (
+            <Snapshot
+              temp={weatherData.temp}
+              condition={weatherData.condition}
+            />
+          )}
         </div>
       </div>
     </div>
