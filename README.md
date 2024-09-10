@@ -24,16 +24,20 @@ cd weather-app
 npm install
 npm run dev
 
+```
+
 ## Environment Variables
 
 Make sure you have the following environment variables set in your .env.local file:
+
+```bash
 NEXT_PUBLIC_OPENWEATHERMAP_API_KEY=your_api_key_here
+```
 
 ## Folder Structure
 
-	•	app/page.tsx: The main page for weather display.
-	•	components/CurrentWeather.tsx: Component to show the current temperature and condition.
-	•	components/WeatherHistory.tsx: Displays the historical weather in chart format.
-	•	components/Snapshot.tsx: Allows users to save and view weather snapshots.
-	•	components/Hero.tsx: Contains a YouTube video forecast for Toronto.
-```
+    •	app/page.tsx: The main page for weather display.
+    •	components/CurrentWeather.tsx: Component to show the current temperature and condition.
+    •	components/WeatherHistory.tsx: Displays the historical weather in chart format.
+    •	components/Snapshot.tsx: Allows users to save and view weather snapshots.
+    •	components/Hero.tsx: Contains a YouTube video forecast for Toronto.
