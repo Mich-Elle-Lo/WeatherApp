@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 type Props = {
   temp: number;
   condition: string;
@@ -37,10 +38,14 @@ export default function CurrentWeather({ temp, condition }: Props) {
       </p>
 
       <button
-        className="mt-4 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded"
+        className="mt-4 p-[.4rem] flex items-center justify-center bg-transparent border border-white text-white rounded-full hover:bg-opacity-20 hover:bg-white transition-opacity"
         onClick={toggleUpdate}
       >
-        {isUpdating ? "Pause Updates" : "Resume Updates"}
+        {isUpdating ? (
+          <PauseIcon className="h-5 w-5 " />
+        ) : (
+          <PlayIcon className="h-5 w-5 " />
+        )}
       </button>
     </div>
   );
