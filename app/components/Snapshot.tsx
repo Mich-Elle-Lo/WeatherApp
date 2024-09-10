@@ -42,7 +42,7 @@ export default function Snapshot({ temp, condition }: Props) {
           <p>Condition: {condition}</p>
         </div>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
+          className="px-4 py-2 bg-gray-200 border border-white text-gray-700 hover:bg-gray-300 hover:text-gray-900 transition-colors duration-300 rounded"
           onClick={saveSnapshot}
         >
           Save Snapshot
