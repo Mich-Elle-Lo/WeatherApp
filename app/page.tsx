@@ -33,7 +33,7 @@ export default function Home() {
     <div className="h-screen">
       {/* <Hero /> */}
       <div
-        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-60 "
+        className="fixed w-full h-screen bg-cover bg-fixed z-[-1] opacity-90 "
         style={{
           backgroundImage: `url('/lightbg.jpeg')`,
         }}
@@ -62,6 +62,12 @@ export default function Home() {
           >
             Weather Snapshot
           </button>
+          <button
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+            onClick={() => setActiveTab("forecast")}
+          >
+            September Forecast
+          </button>
         </div>
         <div className="mt-8 px-5 sm:w-[80vh] md:w-[70vh] ">
           {activeTab === "current" && (
@@ -77,6 +83,7 @@ export default function Home() {
               condition={weatherData.condition}
             />
           )}
+          {activeTab === "forecast" && <Hero />}
         </div>
       </div>
     </div>

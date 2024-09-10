@@ -20,17 +20,10 @@ export default function Hero() {
   return (
     <>
       <div
-        className="relative w-full overflow-hidden md:-mt-[4rem] sm: -mt-[2rem] mh-[30rem]"
+        className="relative w-full overflow-hidden h-auto "
         style={{ height: videoHeight }}
       >
-        <div
-          className="absolute inset-0 z-10 bg-black opacity-50 "
-          style={{ clipPath: "inset(3.5rem 0 4rem 0)" }}
-        ></div>
-        <div
-          className="absolute inset-0 z-0 w-full h-full overflow-hidden"
-          style={{ clipPath: "inset(4rem 0 4rem 0)" }}
-        >
+        <div className="relative w-full overflow-hidden h-auto min-h-[20rem] md:min-h-[35rem]">
           <iframe
             className="absolute top-0 left-0 w-full h-full object-cover border-0"
             src="https://www.youtube.com/embed/LggkCxxlsKA?autoplay=1&loop=1&controls=0&modestbranding=1&playlist=LggkCxxlsKA"
@@ -39,7 +32,6 @@ export default function Hero() {
             allowFullScreen
           ></iframe>
         </div>
-        ;
       </div>
     </>
   );

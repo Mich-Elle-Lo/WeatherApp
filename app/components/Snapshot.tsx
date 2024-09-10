@@ -34,7 +34,7 @@ export default function Snapshot({ temp, condition }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 z-50">
+    <div className="flex flex-col items-center gap-4 shadow-lg p-8  text-white w-full h-[25rem] bg-black bg-opacity-30 rounded-lg">
       <h2 className="text-2xl font-bold">Snapshot</h2>
       <div className="flex gap-4">
         <div className="flex flex-col gap-2">
